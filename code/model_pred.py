@@ -162,7 +162,7 @@ def display_images(folder_path, title, num_examples=3):
         ax.axis('off')
     plt.show()
 
-
+'''
 def save_augmented_images(class_name, num_images=1):
     """
     Save a specified number of augmented images for each original image in a given class.
@@ -182,7 +182,7 @@ def save_augmented_images(class_name, num_images=1):
                                          save_format='png')):
             pass  # This loop will save 'num_images' augmented images for each original image
 
-
+'''
 
 def gaussian_noise(image):
     """
@@ -251,8 +251,8 @@ def prepare_data(train_dir, validation_dir, test_dir):
                     rotation_range=20,
                     width_shift_range=0.1,
                     height_shift_range=0.1,
-                    #horizontal_flip=True,
-                    #zoom_range=0.1,
+                    horizontal_flip=True,
+                    zoom_range=0.1,
                     #channel_shift_range=20,  # Randomly shift color channels
                     preprocessing_function=gaussian_noise,
                     rescale=1. / 255)
