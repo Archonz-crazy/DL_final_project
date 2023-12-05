@@ -115,6 +115,16 @@ elif page == "Workflow Diagram":
     # Display image
     st.image(work_url)
 
+elif page == 'Models':
+    st.header('Different models we tried out.')
+    st.subheader('Resnet50')
+    st.write(
+        """
+        First, we tried out the ResNet50 model to train the images and got the following outputs:
+        """
+        url = 
+    )
+
 elif page == "Prediction":
     import streamlit as st
     from tensorflow.keras.preprocessing.image import img_to_array
@@ -142,7 +152,7 @@ elif page == "Prediction":
 
         img_array = preprocess_input(img_array)
 
-        
+
         img_array = np.expand_dims(img_array, axis=0)
 
         return img_array
