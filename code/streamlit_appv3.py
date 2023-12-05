@@ -16,7 +16,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("Team 6 - Wildfire Dectection")
 
 # Sidebar navigation
-page = st.sidebar.selectbox("Select a Page", ["Topic", "Why", "Wildfire Definition", "Video of wildfire", "Fire Image", "No Fire Image", "Problem Statement","Objective", "Dataset Overview", "Workflow Diagram",'Models','Prediction', "Conclusion", "Project Summary"])
+page = st.sidebar.selectbox("Select a Page", ["Topic", "Why", "Wildfire Definition", "Video of wildfire", "Fire Image", "No Fire Image", "Problem Statement","Objective", "Dataset Overview", "Workflow Diagram",'Models','Prediction', "Conclusion", "Project Summary", "Thank you"])
 
 if page == "Topic":
     # Modelling Images
@@ -156,23 +156,21 @@ This means that our model may be overfitting, but we saw that there is noise in 
 
     tab2.subheader("VGG16")
     tab2.write('Next, we tried out the VGG16 model to train the images and got the following outputs:')
-    tab2.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet1.jpeg?raw=true'
+    tab2.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/vgg1.jpg?raw=true'
     tab2.image(tab2.url)
-    tab1.write('The above confusion matrix is for the ResNet Model')
-    tab1.write('The next image is the accuracy of the model on the train and validation set')
-    tab1.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet2.jpeg?raw=true'
-    tab1.image(tab1.url)
-    tab1.write("""
-    The accuracy for the Resnet model is quite high. But...
-
-    The next image sorts out why we chose the VGG instead of Resnet.
+    tab2.write('The above confusion matrix is for the VGG16 Model')
+    tab2.write('The next image is the accuracy of the model on the train and validation set')
+    tab2.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/vgg2.jpg?raw=true'
+    tab2.image(tab2.url)
+    tab2.write("""
+    The accuracy for the VGG16 model is quite high. And...
         """)
-    tab1.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet3.jpeg?raw=true'
-    tab1.image(tab1.url)
-    tab1.write("""
-    Here, we can see that the loss on the validation set is quite high at 1.6.
+    tab2.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/vgg3.jpg?raw=true'
+    tab2.image(tab2.url)
+    tab2.write("""
+    Here, we can see that the loss on the validation set is very low at ~0.224.
 
-    This means that our model may be overfitting, but we saw that there is noise in the images where there is fire and smoke.
+    This means that our model is predicting images with or without fire in it, quite well.
         """)
 
 
@@ -243,7 +241,7 @@ elif page == "Prediction":
 elif page == "Conclusion":
     # Modelling Images
     st.header('CONCLUSION')
-    con_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide9.JPG'
+    con_url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/Slide11.jpg?raw=true'
     # Display image
     st.image(con_url)
 
@@ -295,5 +293,8 @@ elif page == "Project Summary":
         """
     )
 
-
+elif page == 'Thank you':
+    con_url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/Slide12.jpg?raw=true'
+    # Display image
+    st.image(con_url)
 
