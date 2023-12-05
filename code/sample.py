@@ -16,7 +16,7 @@ import os
 cwd = os.getcwd()
 curr_path = os.path.dirname(cwd)
 classification_path = os.path.join(curr_path, 'Wildfire dataset'+'/'+'the_wildfire_dataset'+'/'+'the_wildfire_dataset')
-code_path = os.path.join(curr_path, 'Code')
+code_path = os.path.join(curr_path, 'code')
 print("model path", os.path.join(code_path, 'model.h5'))
 train_dir = os.path.join(classification_path, 'train')
 valid_dir = os.path.join(classification_path, 'val')
