@@ -16,7 +16,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("Team 6 - Wildfire Dectection")
 
 # Sidebar navigation
-page = st.sidebar.selectbox("Select a Page", ["Topic", "Agenda", "Wildfire Definition", "Video of wildfire", "Fire Image", "No Fire Image", "Problem Statement and Objective", "Dataset Overview", "Workflow Diagram",'Models','Prediction', "Conclusion", "Project Summary"])
+page = st.sidebar.selectbox("Select a Page", ["Topic", "Why", "Wildfire Definition", "Video of wildfire", "Fire Image", "No Fire Image", "Problem Statement","Objective", "Dataset Overview", "Workflow Diagram",'Models','Prediction', "Conclusion", "Project Summary"])
 
 if page == "Topic":
     # Modelling Images
@@ -25,9 +25,9 @@ if page == "Topic":
     # Display image
     st.image(topic_url)
 
-elif page == "Agenda":
+elif page == "Why":
     # Modelling Images
-    st.header('AGENDA')
+    st.header('WHY?')
     agenda_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide2.JPG'
     # Display image
     st.image(agenda_url)
@@ -59,14 +59,25 @@ elif page == "No Fire Image":
     # Display image
     st.image(nofire_url)
 
-elif page == "Problem Statement and Objective":
+elif page == "Problem Statement":
     # Modelling Images
-    st.header('PROBLEM STATEMENT AND OBJECTIVE')
+    st.header('PROBLEM STATEMENT')
     prob_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide6.JPG'
     # Display image
     st.image(prob_url)
 
+elif page == 'Objective':
+    # Modelling Images
+    st.header('OBJECTIVE')
+    prob_url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/Slide7.JPG?raw=true'
+    # Display image
+    st.image(prob_url)
+
 elif page == "Dataset Overview":
+    st.header("DATASET OVERVIEW")
+    prob_url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/Slide8.JPG?raw=true'
+    # Display image
+    st.image(prob_url)
     # Visualization graphs
     st.header('Visualization Graphs')
 
@@ -111,7 +122,7 @@ elif page == "Dataset Overview":
 elif page == "Workflow Diagram":
     # Modelling Images
     st.header('WORKFLOW DIAGRAM')
-    work_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide8.JPG'
+    work_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide9.JPG'
     # Display image
     st.image(work_url)
 
