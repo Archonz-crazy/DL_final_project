@@ -128,8 +128,8 @@ elif page == "Workflow Diagram":
 
 elif page == 'Models':
     st.header('Different models we tried out.')
-    url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/Slide9.JPG?raw=true'
-    st.image('url')
+    url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/Slide10.JPG?raw=true'
+    st.image(url)
 
     tab1, tab2 = st.tabs(["ResNet50", "VGG16"])
 
@@ -153,6 +153,27 @@ Here, we can see that the loss on the validation set is quite high at 1.6.
 
 This means that our model may be overfitting, but we saw that there is noise in the images where there is fire and smoke.
     """)
+
+    tab2.subheader("VGG16")
+    tab2.write('Next, we tried out the VGG16 model to train the images and got the following outputs:')
+    tab2.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet1.jpeg?raw=true'
+    tab2.image(tab2.url)
+    tab1.write('The above confusion matrix is for the ResNet Model')
+    tab1.write('The next image is the accuracy of the model on the train and validation set')
+    tab1.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet2.jpeg?raw=true'
+    tab1.image(tab1.url)
+    tab1.write("""
+    The accuracy for the Resnet model is quite high. But...
+
+    The next image sorts out why we chose the VGG instead of Resnet.
+        """)
+    tab1.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet3.jpeg?raw=true'
+    tab1.image(tab1.url)
+    tab1.write("""
+    Here, we can see that the loss on the validation set is quite high at 1.6.
+
+    This means that our model may be overfitting, but we saw that there is noise in the images where there is fire and smoke.
+        """)
 
 
 elif page == "Prediction":
