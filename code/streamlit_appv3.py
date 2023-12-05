@@ -13,7 +13,7 @@ st.title('TEAM 6: DEEP LEARNING FOR WILDFIRE DETECTION AND PREDICTION')
 
 # Header
 st.sidebar.markdown("---")
-st.sidebar.markdown("Team 6 - Streamlit App")
+st.sidebar.markdown("Team 6 - Wildfire Dectection")
 
 # Sidebar navigation
 page = st.sidebar.selectbox("Select a Page", ["Topic", "Agenda", "Wildfire Definition", "Video of wildfire", "Fire Image", "No Fire Image", "Problem Statement and Objective", "Dataset Overview", "Workflow Diagram",'Models','Prediction', "Conclusion", "Project Summary"])
@@ -117,31 +117,30 @@ elif page == "Workflow Diagram":
 
 elif page == 'Models':
     st.header('Different models we tried out.')
-    st.subheader('Resnet50')
-    st.write('First, we tried out the ResNet50 model to train the images and got the following outputs:')
-    url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet1.jpeg?raw=true'
-    st.image(url)
-    st.write("""
-    The above confusion matrix is for the ResNet50 model.
-    
-    Next, the accuracy for the model.
-    """)
-    url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet2.jpeg?raw=true'
-    st.image(url)
-    st.write("""
-    The accuracy for the Resnet model is quite high. But...
-    
-    The next image sorts out why we chose the VGG instead of Resnet.
-    """)
-    url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet3.jpeg?raw=true'
-    st.image(url)
-    st.write("""
-    Here, we can see that the loss on the validation set is quite high at 1.6.
-    
-    This means that our model may be overfitting, but we saw that there is noise in the images where there is fire and smoke.
-    """)
 
-    st.subheader('VGG16')
+
+    tab1, tab2 = st.tabs(["ResNet50", "VGG16"])
+
+    tab1.subheader("ResNet50")
+    tab1.write('First, we tried out the ResNet50 model to train the images and got the following outputs:')
+    tab1.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet1.jpeg?raw=true'
+    tab1.image(tab1.url)
+    tab1.write('The above confusion matrix is for the ResNet Model')
+    tab1.write('The next image is the accuracy of the model on the train and validation set')
+    tab1.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet2.jpeg?raw=true'
+    tab1.image(tab1.url)
+    tab1.write("""
+The accuracy for the Resnet model is quite high. But...
+
+The next image sorts out why we chose the VGG instead of Resnet.
+    """)
+    tab1.url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet3.jpeg?raw=true'
+    tab1.image(tab1.url)
+    tab1.write("""
+Here, we can see that the loss on the validation set is quite high at 1.6.
+
+This means that our model may be overfitting, but we saw that there is noise in the images where there is fire and smoke.
+    """)
 
 
 elif page == "Prediction":
