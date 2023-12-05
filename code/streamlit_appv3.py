@@ -122,13 +122,14 @@ elif page == "Dataset Overview":
 elif page == "Workflow Diagram":
     # Modelling Images
     st.header('WORKFLOW DIAGRAM')
-    work_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide9.JPG'
+    work_url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/slide9.jpeg?raw=true'
     # Display image
     st.image(work_url)
 
 elif page == 'Models':
     st.header('Different models we tried out.')
-
+    url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/Slide9.JPG?raw=true'
+    st.image('url')
 
     tab1, tab2 = st.tabs(["ResNet50", "VGG16"])
 
