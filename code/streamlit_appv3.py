@@ -21,48 +21,48 @@ page = st.sidebar.selectbox("Select a Page", ["Topic", "Agenda", "Wildfire Defin
 if page == "Topic":
     # Modelling Images
     st.header('TOPIC')
-    topic_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/Slide1.JPG'
+    topic_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide1.JPG'
     # Display image
     st.image(topic_url)
 
 elif page == "Agenda":
     # Modelling Images
     st.header('AGENDA')
-    agenda_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/Slide2.JPG'
+    agenda_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide2.JPG'
     # Display image
     st.image(agenda_url)
 
 elif page == "Wildfire Definition":
     # Modelling Images
     st.header('WILDFIRE DEFINITION')
-    agenda_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/Slide3.JPG'
+    agenda_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide3.JPG'
     # Display image
     st.image(agenda_url)
 
 elif page == "Video of wildfire":
     # URL to MOV file
-    video_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/fire1.mov'
+    video_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/fire1.mov'
     # Display video
     st.video(video_url)
 
 elif page == "Fire Image":
     # Modelling Images
     st.header('FIRE IMAGE')
-    fire_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/Slide4.JPG'
+    fire_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide4.JPG'
     # Display image
     st.image(fire_url)
 
 elif page == "No Fire Image":
     # Modelling Images
     st.header('NO FIRE IMAGE')
-    nofire_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/Slide5.JPG'
+    nofire_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide5.JPG'
     # Display image
     st.image(nofire_url)
 
 elif page == "Problem Statement and Objective":
     # Modelling Images
     st.header('PROBLEM STATEMENT AND OBJECTIVE')
-    prob_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/Slide6.JPG'
+    prob_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide6.JPG'
     # Display image
     st.image(prob_url)
 
@@ -111,14 +111,14 @@ elif page == "Dataset Overview":
 elif page == "Workflow Diagram":
     # Modelling Images
     st.header('WORKFLOW DIAGRAM')
-    work_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/Slide8.JPG'
+    work_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide8.JPG'
     # Display image
     st.image(work_url)
 
 elif page == "Conclusion":
     # Modelling Images
     st.header('CONCLUSION')
-    con_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/Slide9.JPG'
+    con_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/Slide9.JPG'
     # Display image
     st.image(con_url)
 
