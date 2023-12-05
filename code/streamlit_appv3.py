@@ -44,6 +44,7 @@ elif page == "Video of wildfire":
     video_url = 'https://raw.githubusercontent.com/Archonz-crazy/DL_final_project/main/code/resources/fire1.mov'
     # Display video
     st.video(video_url)
+    st.write('This is a vidoe of a wildfire which shows how deadly it can be and how fast it spreads over an area')
 
 elif page == "Fire Image":
     # Modelling Images
