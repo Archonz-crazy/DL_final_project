@@ -40,9 +40,9 @@ files.upload()  # Use this to upload kaggle.json
 
 * ! mv /content/flames/flamesvision/* /content
 * ! rm -r /content/flames
-* Similary for all other train and val folder manipulation can be done for both the dataset and merged in to single folder named classification.
+* Similarly for all other train and val folder manipulation can be done for both the dataset and merged in to single folder named classification.
 
-## Execution hierarcy
+## Execution hierarchy
 1. **model_pred_resnet50.py**
 This script is used for training a wildfire image classification model using the ResNet50 architecture. It includes steps for setting up the environment, downloading and preprocessing the dataset, data augmentation, model definition, training, and evaluation with confusion matrix visualization. It also contains functions for user input and prediction on new images.
 
@@ -51,6 +51,9 @@ This script is focused on exploratory data analysis (EDA) of the image dataset. 
 
 3. **model_pred_vgg16.py**
 This script implements a VGG16-based image classification model. It outlines model training, saving, and evaluation with detailed accuracy and loss plots. The VGG16 model is determined to be the best-performing model for the given task.
+
+4. **streamlit_appv3.py** 
+This script creats a web application, which explains about the project has which has user interactive prediction model, which can take any image and predict whether it is fire or not. 
 
 ## Model Selection
 
