@@ -16,7 +16,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("Team 6 - Streamlit App")
 
 # Sidebar navigation
-page = st.sidebar.selectbox("Select a Page", ["Topic", "Agenda", "Wildfire Definition", "Video of wildfire", "Fire Image", "No Fire Image", "Problem Statement and Objective", "Dataset Overview", "Workflow Diagram",'Prediction', "Conclusion", "Project Summary"])
+page = st.sidebar.selectbox("Select a Page", ["Topic", "Agenda", "Wildfire Definition", "Video of wildfire", "Fire Image", "No Fire Image", "Problem Statement and Objective", "Dataset Overview", "Workflow Diagram",'Models','Prediction', "Conclusion", "Project Summary"])
 
 if page == "Topic":
     # Modelling Images
@@ -118,12 +118,31 @@ elif page == "Workflow Diagram":
 elif page == 'Models':
     st.header('Different models we tried out.')
     st.subheader('Resnet50')
-    st.write(
-        """
-        First, we tried out the ResNet50 model to train the images and got the following outputs:
-        """
-        url = 
-    )
+    st.write('First, we tried out the ResNet50 model to train the images and got the following outputs:')
+    url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet1.jpeg?raw=true'
+    st.image(url)
+    st.write("""
+    The above confusion matrix is for the ResNet50 model.
+    
+    Next, the accuracy for the model.
+    """)
+    url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet2.jpeg?raw=true'
+    st.image(url)
+    st.write("""
+    The accuracy for the Resnet model is quite high. But...
+    
+    The next image sorts out why we chose the VGG instead of Resnet.
+    """)
+    url = 'https://github.com/Archonz-crazy/DL_final_project/blob/main/code/resources/resnet3.jpeg?raw=true'
+    st.image(url)
+    st.write("""
+    Here, we can see that the loss on the validation set is quite high at 1.6.
+    
+    This means that our model may be overfitting, but we saw that there is noise in the images where there is fire and smoke.
+    """)
+
+    st.subheader('VGG16')
+
 
 elif page == "Prediction":
     import streamlit as st
@@ -160,13 +179,16 @@ elif page == "Prediction":
 
     st.title("Wildfire Prediction")
 
+    # Add a slider for the confidence threshold
+    confidence_threshold = st.sidebar.slider("Set the confidence threshold (%)", 0, 100, 50)  # Start at 50%
+
     # File uploader allows user to add their own image
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
 
     if uploaded_file is not None:
         # Display the uploaded image
         image = Image.open(uploaded_file)
-        st.image(image, caption='Uploaded X-ray', use_column_width=True)
+        st.image(image, caption='Uploaded image', use_column_width=True)
         st.write("")
         st.write("Classifying...")
 
@@ -177,12 +199,14 @@ elif page == "Prediction":
         class_names = ['fire', 'no fire']
         class_index = np.argmax(prediction)
         confidence = np.max(prediction) * 100  # Convert to percentage
-        st.write(class_index)
-        predicted_class = class_names[class_index]
 
-        # Show the result
-        st.write(f"Prediction: {predicted_class} (Class {class_index})")
-        st.write(f"Confidence Score: {confidence:.2f}%")
+        # Check if the confidence is above the threshold
+        if confidence >= confidence_threshold:
+            predicted_class = class_names[class_index]
+            st.write(f"Prediction: {predicted_class} (Class {class_index})")
+            st.write(f"Confidence Score: {confidence:.2f}%")
+        else:
+            st.write("Confidence score too high to make a prediction.")
 
 elif page == "Conclusion":
     # Modelling Images
