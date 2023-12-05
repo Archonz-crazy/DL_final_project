@@ -20,6 +20,38 @@ Wildfires pose a major threat to ecosystems, communities, and infrastructure aro
 3. **Model Evaluation:** Evaluate the performance of the model on unseen data and compare it to existing methods.
 4. **Web Application Development:** Create a user-friendly web interface for easy access and utilization of the model.
 
+## Data Download
+* We have directly downloaded our dataset in to the ubuntu server using kaggle api commands, below shows the code to download the dataset and folder manipulations according to the code.
+* from google.colab import files
+files.upload()  # Use this to upload kaggle.json
+
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+* ! kaggle datasets download -d elmadafri/the-wildfire-dataset
+* ! kaggle datasets download -d anamibnjafar0/flamevision
+* ! unzip the-wildfire-dataset.zip
+* ! unzip flamevision.zip
+* ! mv /content/Classification1/the_wildfire_dataset/test/fire/Both_smoke_and_fire/* /content/Classification1/the_wildfire_dataset/test/fire
+* ! mv /content/Classification1/the_wildfire_dataset/test/fire/Smoke_from_fires/* /content/Classification1/the_wildfire_dataset/test/fire
+* ! mv /content/Classification1/the_wildfire_dataset/test/nofire/Fire_confounding_elements/* /content/Classification1/the_wildfire_dataset/test/nofire
+* ! mv /content/Classification1/the_wildfire_dataset/test/nofire/Forested_areas_without_confounding_elements/* /content/Classification1/the_wildfire_dataset/test/nofire
+* ! mv /content/Classification1/the_wildfire_dataset/test/nofire/Smoke_confounding_elements/* /content/Classification1/the_wildfire_dataset/test/nofire
+
+* ! mv /content/flames/flamesvision/* /content
+* ! rm -r /content/flames
+* Similary for all other train and val folder manipulation can be done for both the dataset and merged in to single folder named classification.
+
+## Execution hierarcy
+1. **model_pred_resnet50.py**
+This script is used for training a wildfire image classification model using the ResNet50 architecture. It includes steps for setting up the environment, downloading and preprocessing the dataset, data augmentation, model definition, training, and evaluation with confusion matrix visualization. It also contains functions for user input and prediction on new images.
+
+2. **eda.py**
+This script is focused on exploratory data analysis (EDA) of the image dataset. It includes creating an Excel file with image metadata, visualizations of data distribution, and basic data cleaning operations like handling missing values, duplicates, and ensuring data consistency.
+
+3. **model_pred_vgg16.py**
+This script implements a VGG16-based image classification model. It outlines model training, saving, and evaluation with detailed accuracy and loss plots. The VGG16 model is determined to be the best-performing model for the given task.
+
 ## Model Selection
 
 * **Basic CNN:** Demonstrated reasonable performance but lacked sufficient complexity for accurate prediction.
