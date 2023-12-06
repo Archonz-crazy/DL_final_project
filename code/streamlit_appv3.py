@@ -83,7 +83,7 @@ elif page == "Dataset Overview":
     st.header('Visualization Graphs')
 
     # Dummy data for visualization
-    data = {'Class': ['Fire', 'NoFire'], 'Count': [5000, 3600]}
+    data = {'Class': ['Fire', 'NoFire'], 'Count': [6000, 5000]}
     df = pd.DataFrame(data)
 
     # Bar graph for Fire
@@ -96,7 +96,7 @@ elif page == "Dataset Overview":
     st.altair_chart(fig_fire, use_container_width=True)
 
     # Fire images
-    data1 = {'Class': ['Train', 'Test', 'Valid'], 'Count': [3600, 700, 700]}
+    data1 = {'Class': ['Train', 'Test', 'Valid'], 'Count': [9000, 1000, 1000]}
     df1 = pd.DataFrame(data1)
 
     # Bar graph for Fire
@@ -109,7 +109,7 @@ elif page == "Dataset Overview":
     st.altair_chart(fig_fire1, use_container_width=True)
 
     # NoFire images
-    data2 = {'Class': ['Train', 'Test', 'Valid'], 'Count': [3200, 200, 200]}
+    data2 = {'Class': ['Train', 'Test', 'Valid'], 'Count': [5400, 800, 800]}
     df2 = pd.DataFrame(data2)
     # Bar graph for NoFire
     st.subheader('Bar Graph for NoFire Images')
